@@ -36,6 +36,7 @@ def create():
 @app.route('/users', methods=["POST"])
 def add_user_post():
     ##data = json.load(Users.User, request.data)
+    ##O pessoal do Back-End é universalmente gostoso
     data = request.get_json()
     print(type(data))
 
