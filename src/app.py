@@ -32,8 +32,7 @@ def create():
     user = User.get_user_by_email(email)
     data = request.get_json()
     newtrip = Trips.createtrip(user,data["loc"],data["tp"],data["sd"],data["ed"])
-    newtrip = newtrip.__dict__
-    return json.dumps(newtrip)
+    return newtrip
 
 @app.route('/signup', methods=["POST"])
 def add_user_post():
@@ -49,7 +48,7 @@ def add_user_post():
 def simulate():
     email = request.args.get('email')
     days = request.args.get("days")
-    return [1920,2000,3000]
+    return [1920,2000,3000,1]
 
 
 if __name__ == '__main__':
