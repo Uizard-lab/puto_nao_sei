@@ -13,8 +13,7 @@ class User:
             User.currentUsers = User.load_users()
 
     def factoryuser(id: int, name: str, gender: str, 
-                    age: int,  email: str, address: str, password: str
-                    ):
+                    age: int,  email: str, address: str, password: str):
         newuser = User()
         newuser.name = name
         newuser.gender = gender
@@ -22,24 +21,26 @@ class User:
         newuser.email = email
         newuser.password = password
         newuser.address = address
+        User.loaduserstatic()
         return newuser
 
     def load_users():
 
-        with open("../repo/users.json", "r") as file:
-            return json.load(file, object_hook=lambda x: User(**x))
+        with open("repo/users.json", "r") as file:
+            return json.load(file)
 
     def store_users(self):
-        with open("../repo/users.json", "w") as file:
-            json.dump(self._users, file, default=lambda x: x.__dict__, indent=4)
+        with open("repo/users.json", "w") as file:
+            json.dump(self.currentUsers, file, default=lambda x: x.__dict__, indent=4)
 
-    def get_user_by_email( email: str) -> User|None:
+    def get_user_by_email(email: str):
         for user in User.currentUsers:
-            if user.email == email:
+            print(type(user))
+            if user["email"] == email:
                 return user
         return None
 
-    def get_user_by_id(self, user_id: int) -> User|None:
+    def get_user_by_id(self, user_id: int) :
         for user in self._users:
             if user.id == user_id:
                 return user
