@@ -30,10 +30,10 @@ class Trips:
 
     def getTripbyEmail(email):
         user = User.get_user_by_email(email)
-        Trips.loadTrip()
+        Trips.tripsStore = Trips.loadTrip()
         for trip in Trips.tripsStore:
-            if user == trip.Currentser:
-                print("One func")
+            if user["email"] == trip["Currentuser"]["email"]:
+                return trip
 
 
 

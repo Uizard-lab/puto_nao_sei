@@ -31,6 +31,7 @@ def create():
     user = User.get_user_by_email(email)
     data = request.get_json()
     newtrip = Trips.createtrip(user,data["loc"],data["tp"],data["sd"],data["ed"])
+    newtrip = newtrip.__dict__
     return newtrip
 
 @app.route('/signup', methods=["POST"])
