@@ -23,7 +23,6 @@ def city_name():
 def plans():
     email = request.args.get('email')
     trip = Trips.getTripbyEmail(email=email)
-    trip = trip.__dict__
     return trip
 
 @app.route('/trips', methods = ["POST"])
