@@ -24,38 +24,6 @@ df.loc[53:,'Type']='Salaries And Financing'
 
 df.insert(0, 'Type', df.pop('Type'))
 import json
-# Get unique types from the 'Type' column
-unique_types = df['Type'].unique()
-
-# Convert to a list
-unique_types_list = unique_types.tolist()
-
-# Convert the list to JSON
-unique_types_json = json.dumps(unique_types_list)
-
-print(unique_types_json)import json
-
-# Sample JSON string representing unique types
-unique_types_json = '["Restaurant", "Market", "Transportation", "Utilities (Monthly)", "Sports And Leisure", "Childcare", "Clothing And Shoes", "Rent Per Month", "Buy Apartment Price", "Salaries And Financing"]'
-
-# Parse JSON to list
-unique_types_list = json.loads(unique_types_json)
-
-# Select categories at indices 0, 2, 3, 4, 5, and 6
-selected_categories = [unique_types_list[i] for i in [0, 2, 3, 4, 6, 7]]
-
-
-# Merge selected categories and rename as 'Others'
-merged_category = 'Others'
-other_categories = ['Utilities (Monthly)', 'Sports And Leisure', 'Clothing And Shoes']
-
-# Check if any of the other categories are present in the selected categories
-if any(category in selected_categories for category in other_categories):
-    # Remove the individual categorixes and add the merged category
-    selected_categories_final = [category for category in selected_categories if category not in other_categories]
-    selected_categories_final.append(merged_category)
-
-print(selected_categories_final)import json
 
 # Sample JSON string representing unique types
 unique_types_json = '["Restaurant", "Market", "Transportation", "Utilities (Monthly)", "Sports And Leisure", "Childcare", "Clothing And Shoes", "Rent Per Month", "Buy Apartment Price", "Salaries And Financing"]'
@@ -78,11 +46,14 @@ def select_categories(unique_types_list):
 def calculate_avg_expenses(selected_categories, df):
     avg_expenses_per_category = {}
     for category in selected_categories:
-        # Remove non-numeric characters (including commas) and convert to numeric
-        df['Price'] = df['Price'].str.replace('€', '').str.replace(',', '').astype(float)
+        # Convert 'Price' column to string and then remove non-numeric characters (including commas)
+        df['Price'] = df['Price'].astype(str).str.replace('€', '').str.replace(',', '')
+        # Convert the cleaned 'Price' column to float
+        df['Price'] = df['Price'].astype(float)
         avg_expense = df[df['Type'] == category]['Price'].mean()
         avg_expenses_per_category[category] = avg_expense
     return avg_expenses_per_category
+
 
 
 
