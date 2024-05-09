@@ -1,0 +1,702 @@
+[
+    {
+        "id": 1,
+        "drink_name": "Corona Extra",
+        "alcohol": "4.6",
+        "category": "Beer",
+        "bac": 0.02
+    },
+    {
+        "id": 2,
+        "drink_name": "Heineken",
+        "alcohol": "5",
+        "category": "Beer",
+        "bac": 0.02
+    },
+    {
+        "id": 3,
+        "drink_name": "Guinness Draught",
+        "alcohol": "4.2",
+        "category": "Beer",
+        "bac": 0.02
+    },
+    {
+        "id": 4,
+        "drink_name": "Budweiser",
+        "alcohol": "5",
+        "category": "Beer",
+        "bac": 0.02
+    },
+    {
+        "id": 5,
+        "drink_name": "Stella Artois",
+        "alcohol": "5",
+        "category": "Beer",
+        "bac": 0.02
+    },
+    {
+        "id": 6,
+        "drink_name": "Blue Moon Belgian White",
+        "alcohol": "5.4",
+        "category": "Beer",
+        "bac": 0.02
+    },
+    {
+        "id": 7,
+        "drink_name": "Samuel Adams Boston Lager",
+        "alcohol": "5",
+        "category": "Beer",
+        "bac": 0.02
+    },
+    {
+        "id": 8,
+        "drink_name": "Sierra Nevada Pale Ale",
+        "alcohol": "5.6",
+        "category": "Beer",
+        "bac": 0.02
+    },
+    {
+        "id": 9,
+        "drink_name": "Pilsner Urquell",
+        "alcohol": "4.4",
+        "category": "Beer",
+        "bac": 0.02
+    },
+    {
+        "id": 10,
+        "drink_name": "Dos Equis Amber Lager",
+        "alcohol": "4.7",
+        "category": "Beer",
+        "bac": 0.02
+    },
+    {
+        "id": 11,
+        "drink_name": "Cabernet Sauvignon",
+        "alcohol": "13.5-15",
+        "category": "Wine",
+        "bac": 0.025
+    },
+    {
+        "id": 12,
+        "drink_name": "Merlot",
+        "alcohol": "13.5",
+        "category": "Wine",
+        "bac": 0.025
+    },
+    {
+        "id": 13,
+        "drink_name": "Chardonnay",
+        "alcohol": "13-14",
+        "category": "Wine",
+        "bac": 0.025
+    },
+    {
+        "id": 14,
+        "drink_name": "Pinot Noir",
+        "alcohol": "13-14",
+        "category": "Wine",
+        "bac": 0.025
+    },
+    {
+        "id": 15,
+        "drink_name": "Sauvignon Blanc",
+        "alcohol": "11.5-13.5",
+        "category": "Wine",
+        "bac": 0.025
+    },
+    {
+        "id": 16,
+        "drink_name": "Zinfandel",
+        "alcohol": "14-17",
+        "category": "Wine",
+        "bac": 0.025
+    },
+    {
+        "id": 17,
+        "drink_name": "Riesling",
+        "alcohol": "8-12",
+        "category": "Wine",
+        "bac": 0.025
+    },
+    {
+        "id": 18,
+        "drink_name": "Malbec",
+        "alcohol": "13-15",
+        "category": "Wine",
+        "bac": 0.025
+    },
+    {
+        "id": 19,
+        "drink_name": "Shiraz/Syrah",
+        "alcohol": "12-15",
+        "category": "Wine",
+        "bac": 0.025
+    },
+    {
+        "id": 20,
+        "drink_name": "Moscato",
+        "alcohol": "5-7",
+        "category": "Wine",
+        "bac": 0.025
+    },
+    {
+        "id": 21,
+        "drink_name": "Vodka",
+        "alcohol": "typically 40",
+        "category": "Spirit",
+        "bac": 0.025
+    },
+    {
+        "id": 22,
+        "drink_name": "Rum",
+        "alcohol": "typically 40",
+        "category": "Spirit",
+        "bac": 0.025
+    },
+    {
+        "id": 23,
+        "drink_name": "Whiskey",
+        "alcohol": "varies",
+        "category": "Spirit",
+        "bac": 0.025
+    },
+    {
+        "id": 24,
+        "drink_name": "Gin",
+        "alcohol": "typically 40-50",
+        "category": "Spirit",
+        "bac": 0.025
+    },
+    {
+        "id": 25,
+        "drink_name": "Tequila",
+        "alcohol": "typically 38-40",
+        "category": "Spirit",
+        "bac": 0.025
+    },
+    {
+        "id": 26,
+        "drink_name": "Brandy",
+        "alcohol": "typically 35-60",
+        "category": "Spirit",
+        "bac": 0.025
+    },
+    {
+        "id": 27,
+        "drink_name": "Absinthe",
+        "alcohol": "typically 45-74",
+        "category": "Spirit",
+        "bac": 0.025
+    },
+    {
+        "id": 28,
+        "drink_name": "Cognac",
+        "alcohol": "typically 40-60",
+        "category": "Spirit",
+        "bac": 0.025
+    },
+    {
+        "id": 29,
+        "drink_name": "Sake",
+        "alcohol": "typically 15-20",
+        "category": "Spirit",
+        "bac": 0.025
+    },
+    {
+        "id": 30,
+        "drink_name": "Aquavit",
+        "alcohol": "typically 40-45",
+        "category": "Spirit",
+        "bac": 0.025
+    },
+    {
+        "id": 31,
+        "drink_name": "Mojito",
+        "alcohol": "varies",
+        "category": "Cocktail",
+        "bac": 0.02
+    },
+    {
+        "id": 32,
+        "drink_name": "Margarita",
+        "alcohol": "varies",
+        "category": "Cocktail",
+        "bac": 0.02
+    },
+    {
+        "id": 33,
+        "drink_name": "Martini",
+        "alcohol": "varies",
+        "category": "Cocktail",
+        "bac": 0.02
+    },
+    {
+        "id": 34,
+        "drink_name": "Old Fashioned",
+        "alcohol": "varies",
+        "category": "Cocktail",
+        "bac": 0.02
+    },
+    {
+        "id": 35,
+        "drink_name": "Manhattan",
+        "alcohol": "varies",
+        "category": "Cocktail",
+        "bac": 0.02
+    },
+    {
+        "id": 36,
+        "drink_name": "Daiquiri",
+        "alcohol": "varies",
+        "category": "Cocktail",
+        "bac": 0.02
+    },
+    {
+        "id": 37,
+        "drink_name": "Pina Colada",
+        "alcohol": "varies",
+        "category": "Cocktail",
+        "bac": 0.02
+    },
+    {
+        "id": 38,
+        "drink_name": "Cosmopolitan",
+        "alcohol": "varies",
+        "category": "Cocktail",
+        "bac": 0.02
+    },
+    {
+        "id": 39,
+        "drink_name": "Mai Tai",
+        "alcohol": "varies",
+        "category": "Cocktail",
+        "bac": 0.02
+    },
+    {
+        "id": 40,
+        "drink_name": "Bloody Mary",
+        "alcohol": "varies",
+        "category": "Cocktail",
+        "bac": 0.02
+    },
+    {
+        "id": 41,
+        "drink_name": "Baileys Irish Cream",
+        "alcohol": "17",
+        "category": "Liqueurs",
+        "bac": 0.02
+    },
+    {
+        "id": 42,
+        "drink_name": "Amaretto",
+        "alcohol": "typically 24-28",
+        "category": "Liqueurs",
+        "bac": 0.02
+    },
+    {
+        "id": 43,
+        "drink_name": "Grand Marnier",
+        "alcohol": "typically 40",
+        "category": "Liqueurs",
+        "bac": 0.02
+    },
+    {
+        "id": 44,
+        "drink_name": "Kahlua",
+        "alcohol": "typically 20",
+        "category": "Liqueurs",
+        "bac": 0.02
+    },
+    {
+        "id": 45,
+        "drink_name": "Cointreau",
+        "alcohol": "typically 40",
+        "category": "Liqueurs",
+        "bac": 0.02
+    },
+    {
+        "id": 46,
+        "drink_name": "Frangelico",
+        "alcohol": "typically 20",
+        "category": "Liqueurs",
+        "bac": 0.02
+    },
+    {
+        "id": 47,
+        "drink_name": "Drambuie",
+        "alcohol": "typically 40",
+        "category": "Liqueurs",
+        "bac": 0.02
+    },
+    {
+        "id": 48,
+        "drink_name": "Triple Sec",
+        "alcohol": "typically 15-40",
+        "category": "Liqueurs",
+        "bac": 0.02
+    },
+    {
+        "id": 49,
+        "drink_name": "Chambord",
+        "alcohol": "typically 16.5",
+        "category": "Liqueurs",
+        "bac": 0.02
+    },
+    {
+        "id": 50,
+        "drink_name": "Limoncello",
+        "alcohol": "typically 28-32",
+        "category": "Liqueurs",
+        "bac": 0.02
+    },
+    {
+        "id": 51,
+        "drink_name": "Cider",
+        "alcohol": "varies",
+        "category": "Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 52,
+        "drink_name": "Mead",
+        "alcohol": "varies",
+        "category": "Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 53,
+        "drink_name": "Soju",
+        "alcohol": "typically 16-25",
+        "category": "Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 54,
+        "drink_name": "Sambuca",
+        "alcohol": "typically 38-42",
+        "category": "Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 55,
+        "drink_name": "Sangria",
+        "alcohol": "varies",
+        "category": "Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 56,
+        "drink_name": "Jagermeister",
+        "alcohol": "typically 35",
+        "category": "Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 57,
+        "drink_name": "Absolut Citron",
+        "alcohol": "35",
+        "category": "Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 58,
+        "drink_name": "Malibu Rum",
+        "alcohol": "21",
+        "category": "Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 59,
+        "drink_name": "Campari",
+        "alcohol": "20.5",
+        "category": "Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 60,
+        "drink_name": "Pernod",
+        "alcohol": "40",
+        "category": "Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 61,
+        "drink_name": "Sake",
+        "alcohol": "typically 15-20",
+        "category": "Japanese Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 62,
+        "drink_name": "Shochu",
+        "alcohol": "typically 25-30",
+        "category": "Japanese Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 63,
+        "drink_name": "Umeshu (Plum Wine)",
+        "alcohol": "typically 10-15",
+        "category": "Japanese Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 64,
+        "drink_name": "Whisky (Japanese)",
+        "alcohol": "varies",
+        "category": "Japanese Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 65,
+        "drink_name": "Suntory Kakubin Whisky",
+        "alcohol": "40",
+        "category": "Japanese Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 66,
+        "drink_name": "Nikka Whisky",
+        "alcohol": "varies",
+        "category": "Japanese Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 67,
+        "drink_name": "Roku Gin",
+        "alcohol": "43",
+        "category": "Japanese Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 68,
+        "drink_name": "Haku Vodka",
+        "alcohol": "40",
+        "category": "Japanese Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 69,
+        "drink_name": "Choya Umeshu",
+        "alcohol": "typically 14-15",
+        "category": "Japanese Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 70,
+        "drink_name": "Iichiko Shochu",
+        "alcohol": "typically 25-30",
+        "category": "Japanese Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 71,
+        "drink_name": "Akvavit",
+        "alcohol": "typically 40-50",
+        "category": "Scandinavian Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 72,
+        "drink_name": "Linie Aquavit",
+        "alcohol": "41.5",
+        "category": "Scandinavian Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 73,
+        "drink_name": "Gammel Dansk Bitter Dram",
+        "alcohol": "38",
+        "category": "Scandinavian Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 74,
+        "drink_name": "Koskenkorva Vodka",
+        "alcohol": "typically 32-38",
+        "category": "Scandinavian Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 75,
+        "drink_name": "Punsch",
+        "alcohol": "typically 25-30",
+        "category": "Scandinavian Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 76,
+        "drink_name": "O.P. Anderson Aquavit",
+        "alcohol": "typically 40-45",
+        "category": "Scandinavian Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 77,
+        "drink_name": "Absolut Vodka",
+        "alcohol": "40",
+        "category": "Scandinavian Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 78,
+        "drink_name": "Br\u00c3\u00a4nnvin",
+        "alcohol": "typically 30-38",
+        "category": "Scandinavian Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 79,
+        "drink_name": "Lapponia Lakka Cloudberry Liqueur",
+        "alcohol": "typically 21-25",
+        "category": "Scandinavian Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 80,
+        "drink_name": "OP Anderson Original Aquavit",
+        "alcohol": "typically 40",
+        "category": "Scandinavian Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 81,
+        "drink_name": "Pisco",
+        "alcohol": "typically 35-48",
+        "category": "Latin American Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 82,
+        "drink_name": "Aguardiente",
+        "alcohol": "typically 24-29",
+        "category": "Latin American Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 83,
+        "drink_name": "Guarana Antartica",
+        "alcohol": "4.2",
+        "category": "Latin American Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 84,
+        "drink_name": "Guarana Brahma",
+        "alcohol": "4.2",
+        "category": "Latin American Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 85,
+        "drink_name": "Capeta (Brazilian Cocktail)",
+        "alcohol": "varies",
+        "category": "Latin American Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 86,
+        "drink_name": "Aguardiente Cristal",
+        "alcohol": "typically 24-29",
+        "category": "Latin American Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 87,
+        "drink_name": "Cacha\u00c3\u00a7a",
+        "alcohol": "typically 38-48",
+        "category": "Latin American Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 88,
+        "drink_name": "Cusque\u00c3\u00b1a Beer",
+        "alcohol": "4.8",
+        "category": "Latin American Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 89,
+        "drink_name": "Inca Kola",
+        "alcohol": "11",
+        "category": "Latin American Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 90,
+        "drink_name": "Papel\u00c3\u00b3n con Lim\u00c3\u00b3n",
+        "alcohol": "varies",
+        "category": "Latin American Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 91,
+        "drink_name": "Arak",
+        "alcohol": "typically 40-63",
+        "category": "Middle Eastern Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 92,
+        "drink_name": "Raki",
+        "alcohol": "typically 40-45",
+        "category": "Middle Eastern Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 93,
+        "drink_name": "Turkish Coffee",
+        "alcohol": "varies",
+        "category": "Middle Eastern Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 94,
+        "drink_name": "Ouzo",
+        "alcohol": "typically 37.5-50",
+        "category": "Middle Eastern Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 95,
+        "drink_name": "Mastika",
+        "alcohol": "typically 40",
+        "category": "Middle Eastern Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 96,
+        "drink_name": "Zivania",
+        "alcohol": "typically 45-60",
+        "category": "Middle Eastern Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 97,
+        "drink_name": "Boukha",
+        "alcohol": "typically 40",
+        "category": "Middle Eastern Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 98,
+        "drink_name": "Metaxa",
+        "alcohol": "typically 40",
+        "category": "Middle Eastern Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 99,
+        "drink_name": "Amarula",
+        "alcohol": "17",
+        "category": "Middle Eastern Spirits",
+        "bac": 0.025
+    },
+    {
+        "id": 100,
+        "drink_name": "Pastis",
+        "alcohol": "typically 40-45",
+        "category": "Middle Eastern Spirits",
+        "bac": 0.025
+    }
+]

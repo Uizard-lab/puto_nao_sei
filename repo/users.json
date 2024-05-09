@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "name",
+        "gender": "M",
+        "address": "address",
+        "weight": "weight",
+        "age": 35,
+        "driver": 0,
+        "email": "email",
+        "password": "asd",
+        "emergencyContacts": []
+    },
+    {
+        "id": 2,
+        "name": "test",
+        "gender": "no binario",
+        "address": "Rua",
+        "weight": 234,
+        "age": 1243,
+        "driver": 0,
+        "email": "tomas@gmail.com",
+        "password": "password",
+        "emergencyContacts": "9666"
+    }
+]
