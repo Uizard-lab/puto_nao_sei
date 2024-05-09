@@ -12,7 +12,7 @@ class User:
     def loaduserstatic():
             User.currentUsers = User.load_users()
 
-    def factoryuser(id: int, name: str, gender: str, 
+    def factoryuser( name: str, gender: str, 
                     age: int,  email: str, address: str, password: str):
         newuser = User()
         newuser.name = name
@@ -22,6 +22,8 @@ class User:
         newuser.password = password
         newuser.address = address
         User.loaduserstatic()
+        User.currentUsers.append(newuser)        
+        newuser.store_users()
         return newuser
 
     def load_users():

@@ -1,0 +1,94 @@
+[
+    {
+        "Currentuser": {
+            "id": 2,
+            "name": "test",
+            "gender": "no binario",
+            "address": "Rua",
+            "weight": 234,
+            "age": 1243,
+            "driver": 0,
+            "email": "tomas@gmail.com",
+            "password": "password",
+            "emergencyContacts": "9666"
+        },
+        "location": "Porto",
+        "Totalprice": 32132,
+        "startDate": "12-2-2024",
+        "endDate": "16-2-2024",
+        "category": [
+            "Resturant",
+            "Market",
+            "Stuff"
+        ]
+    },
+    {
+        "Currentuser": {
+            "id": 2,
+            "name": "test",
+            "gender": "no binario",
+            "address": "Rua",
+            "weight": 234,
+            "age": 1243,
+            "driver": 0,
+            "email": "tomas@gmail.com",
+            "password": "password",
+            "emergencyContacts": "9666"
+        },
+        "location": "Lisboa",
+        "Totalprice": 12312,
+        "startDate": "12-2-2024",
+        "endDate": "16-2-2024",
+        "category": [
+            "Resturant",
+            "Market",
+            "Stuff"
+        ]
+    },
+    {
+        "Currentuser": {
+            "id": 2,
+            "name": "test",
+            "gender": "no binario",
+            "address": "Rua",
+            "weight": 234,
+            "age": 1243,
+            "driver": 0,
+            "email": "tomas@gmail.com",
+            "password": "password",
+            "emergencyContacts": "9666"
+        },
+        "location": "Lisboa",
+        "Totalprice": 12312,
+        "startDate": "12-2-2024",
+        "endDate": "16-2-2024",
+        "category": [
+            "Resturant",
+            "Market",
+            "Stuff"
+        ]
+    },
+    {
+        "Currentuser": {
+            "id": 1,
+            "name": "name",
+            "gender": "M",
+            "address": "address",
+            "weight": "weight",
+            "age": 35,
+            "driver": 0,
+            "email": "email",
+            "password": "asd",
+            "emergencyContacts": []
+        },
+        "location": "Lisboa",
+        "Totalprice": 12312,
+        "startDate": "12-2-2024",
+        "endDate": "16-2-2024",
+        "category": [
+            "Resturant",
+            "Market",
+            "Stuff"
+        ]
+    }
+]

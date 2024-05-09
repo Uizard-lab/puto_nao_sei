@@ -12,8 +12,8 @@ User.loaduserstatic()
 @app.route('/users', methods=["GET"])
 def get_users():
     email = request.args.get('email')
-    users.get_user_by_email(email).__dict__
-    return get_user_by_email(email)
+    user = User.get_user_by_email(email)
+    return user
 
 @app.route('/city', methods = ["GET"])
 def city_name():
@@ -23,6 +23,7 @@ def city_name():
 def plans():
     email = request.args.get('email')
     trip = Trips.getTripbyEmail(email=email)
+    trip = trip.__dict__
     return trip
 
 @app.route('/trips', methods = ["POST"])
@@ -30,10 +31,11 @@ def create():
     email = request.args.get('email')
     user = User.get_user_by_email(email)
     data = request.get_json()
-    newtrip = Trips.tripFactory(user,data["loc"],data["tp"],data["sd"],data["ed"])
+    newtrip = Trips.createtrip(user,data["loc"],data["tp"],data["sd"],data["ed"])
     newtrip = newtrip.__dict__
     return json.dumps(newtrip)
-@app.route('/users', methods=["POST"])
+
+@app.route('/signup', methods=["POST"])
 def add_user_post():
     ##data = json.load(Users.User, request.data)
     ##O pessoal do Back-End é universalmente gostoso
@@ -42,6 +44,12 @@ def add_user_post():
 
     User.factoryuser(email=data["email"],password=data["password"],age=data["age"], gender=data["gender"],name=data["name"],address=data["address"])
     return "success"
+
+@app.route('/simulate', methods=["GET"])
+def simulate():
+    email = request.args.get('email')
+    days = request.args.get("days")
+    return [1920,2000,3000]
 
 
 if __name__ == '__main__':
