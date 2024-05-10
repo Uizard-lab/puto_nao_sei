@@ -22,7 +22,7 @@ def get_users():
     user = User.get_user_by_email(email)
     if not email or not password:
         return jsonify({"error": "Email and password are required"}), 400
-    if user.password != password:
+    if user["password"] != password:
         return jsonify({"error": "Wrong password! Please try again"})
     return jsonify(user)
 
