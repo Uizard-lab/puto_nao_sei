@@ -2,49 +2,41 @@ import json
 from Users import User
 
 class Trips:
-    Currentuser = ""
-    location = ""
-    Totalprice = ""
-    startDate = 0
-    endDate = 0
     category = ["Resturant","Market","Stuff"]
-    tripsStore = [] 
 
+
+    def __init__(self,user,loc,tp,sd,ed):
+        self.Currentuser = user
+        self.location = loc
+        self.Totalprice = tp
+        self.startDate = sd
+        self.endDate = ed
+        print("Trip Created")
 
     def tripFactory(user,loc,tp,sd,ed):
-        trip = Trips()
-        trip.Currentuser = user
-        trip.location = loc
-        trip.Totalprice = tp
-        trip.startDate = sd
-        trip.endDate = ed
+        trip = Trips(user,loc,tp,sd,ed)
         trip.category = Trips.category
         return trip
 
     def createtrip(email, loc, tp, sd, ed):
         trip = Trips.tripFactory(email,loc,tp,sd,ed)
-        Trips.tripsStore = Trips.loadTrip()
-        Trips.tripsStore.append(trip.__dict__)
-        Trips.storeTrip()
+        trip.storeTrip()
         return trip
 
     def getTripbyEmail(email):
         user = User.get_user_by_email(email)
-        Trips.tripsStore = Trips.loadTrip()
-        for trip in Trips.tripsStore:
-            if user["email"] == trip["Currentuser"]["email"]:
-                return trip
+        trip = Trips.loadTrip()
 
+        return Trips(trip["Currentuser"],trip["location"],trip["Totalprice"],trip["startDate"],trip["endDate"])
 
-
-    def tripbyuser(email):
-        user = User.get_user_by_email(email)
 
     def loadTrip():
         with open("repo/trip.json", "r") as file:
             return json.load(file)
 
-    def storeTrip():
+    def storeTrip(self):
         with open("repo/trip.json", "w") as file:
-            json.dump(Trips.tripsStore, file)
+            json.dump(self.__dict__, file)
+
+
 

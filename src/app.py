@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, make_response
 from Users import User
 from Trips import Trips
+import json
 
 app = Flask(__name__)
 
@@ -24,7 +25,7 @@ def get_users():
 def city_name():
     return jsonify({"cityName": "Lisbon"})
 
-@app.route('/trips', methods=["GET", "POST"])
+@app.route('/trips', methods=["GET", "POST","PATCH"])
 def trips():
     if request.method == "GET":
         email = request.args.get('email')
@@ -35,7 +36,17 @@ def trips():
         user = User.get_user_by_email(email)
         data = request.get_json()
         newtrip = Trips.createtrip(user, data["loc"], data["tp"], data["sd"], data["ed"])
-        return jsonify(newtrip.__dict__)
+        return json.dumps(newtrip.__dict__)
+    elif request.method == "PATCH":
+        email = request.args.get("email")
+        price = request.args.get("price")
+        trip = Trips.getTripbyEmail(email)
+        data = request.get_json()
+        trip.Totalprice = int(price)
+        trip.storeTrip()
+        return json.dumps(trip.__dict__)
+
+
 
 @app.route('/signup', methods=["POST"])
 def add_user_post():
@@ -47,7 +58,41 @@ def add_user_post():
 def simulate():
     email = request.args.get('email')
     days = request.args.get("days")
-    return jsonify([1920, 2000, 3000, 1])
+    trip = Trips.getTripbyEmail(email)
+    totalprice = trip.Totalprice
+    category = {"Resturant":28.275,"Transportation":10.52,"Habition":84.82,"Outhers":158}
+    for cat in category:
+        percentage = category[cat] / sum(category.values())
+        print(percentage)
+
+
+
+
+
+
+
+    return [1920,2000,3000,1]
+
+@app.route('/simulateDays', methods=["GET"])
+def simulateDays():
+    email = request.args.get('email')
+    days = request.args.get("days")
+    trip = Trips.getTripbyEmail(email)
+    daysPrice = trip.Totalprice / int(days)
+    return daysPrice
+
+@app.route('/simulateDays', methods=["PATCH"])
+def simulateDaysPatch():
+    email = request.args.get('email')
+    price = request.args.get("price")
+    days = request.args.get("days")
+    trip = Trips.getTripbyEmail(email)
+    trip.Totalprice = trip.Totalprice - int(price)
+    Trips.tripsStore.append(trip)
+    Trips.storeTrip()
+
+    return json.dumps(trip.__dict__)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

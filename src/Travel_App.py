@@ -108,8 +108,8 @@ def calculate_total_expenses(selected_categories, num_days):
             avg_rent = df[df['Type'] == 'Rent Per Month']['Price'].mean()
             avg_rent_per_day = avg_rent / 30
             # Add the average rent per day to the selected categories
-            selected_categories.append(avg_rent_per_day)            
-            
+            selected_categories.append(avg_rent_per_day)
+
             total_expenses[category] = avg_rent * num_days
         elif category in ['Utilities (Monthly)', 'Sports And Leisure', 'Clothing And Shoes']:
             other_categories = ['Utilities (Monthly)', 'Sports And Leisure', 'Clothing And Shoes']
