@@ -30,23 +30,13 @@ def trips():
     if request.method == "GET":
         email = request.args.get('email')
         trip = Trips.getTripbyEmail(email=email)
-        return jsonify(trip.__dict__)
+        return json.dumps(trip.__dict__)
     elif request.method == "POST":
         email = request.args.get('email')
         user = User.get_user_by_email(email)
         data = request.get_json()
         newtrip = Trips.createtrip(user, data["loc"], data["tp"], data["sd"], data["ed"])
         return json.dumps(newtrip.__dict__)
-    elif request.method == "PATCH":
-        email = request.args.get("email")
-        price = request.args.get("price")
-        trip = Trips.getTripbyEmail(email)
-        data = request.get_json()
-        trip.Totalprice = int(price)
-        trip.storeTrip()
-        return json.dumps(trip.__dict__)
-
-
 
 @app.route('/signup', methods=["POST"])
 def add_user_post():

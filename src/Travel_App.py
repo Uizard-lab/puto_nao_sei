@@ -38,35 +38,12 @@ print(unique_types_json)
 import json
 
 # Sample JSON string representing unique types
-unique_types_json = '["Restaurant", "Market", "Transportation", "Utilities (Monthly)", "Sports And Leisure", "Childcare", "Clothing And Shoes", "Rent Per Day", "Buy Apartment Price", "Salaries And Financing"]'
-
+unique_types_json ='["Restaurant", "Transportation", "Rent Per Day", "Others"]'
+#'["Restaurant", "Market", "Transportation", "Utilities (Monthly)", "Sports And Leisure", "Childcare", "Clothing And Shoes", "Rent Per Month", "Buy Apartment Price", "Salaries And Financing"]'
+ 
 # Parse JSON to list
 unique_types_list = json.loads(unique_types_json)
-
-# Select categories at indices 0, 2, 3, 4, 5, and 6
-selected_categories = [unique_types_list[i] for i in [0, 2, 3, 4, 6, 7]]
-
-selected_categories
-# Merge selected categories and rename as 'Others'
-merged_category = 'Others'
-other_categories = ['Utilities (Monthly)', 'Sports And Leisure', 'Clothing And Shoes']
-
-# Check if any of the other categories are present in the selected categories
-if any(category in selected_categories for category in other_categories):
-    # Remove the individual categorixes and add the merged category
-    selected_categories_final = [category for category in selected_categories if category not in other_categories]
-    selected_categories_final.append(merged_category)
-
-print(selected_categories_final)
-
-import json
-
-# Sample JSON string representing unique types
-unique_types_json = '["Restaurant", "Market", "Transportation", "Utilities (Monthly)", "Sports And Leisure", "Childcare", "Clothing And Shoes", "Rent Per Month", "Buy Apartment Price", "Salaries And Financing"]'
-
-# Parse JSON to list
-unique_types_list = json.loads(unique_types_json)
-
+ 
 # Function to select categories
 def select_categories(unique_types_list):
     print("Select categories to include in the expense calculation:")
@@ -76,9 +53,9 @@ def select_categories(unique_types_list):
     selected_indices = [int(index.strip()) - 1 for index in selected_indices.split(",")]
     selected_categories = [unique_types_list[index] for index in selected_indices]
     return selected_categories
-
+ 
 # Function to calculate average expenses per selected category
-
+ 
 def calculate_avg_expenses(selected_categories, df):
     avg_expenses_per_category = {}
     for category in selected_categories:
@@ -89,9 +66,10 @@ def calculate_avg_expenses(selected_categories, df):
         avg_expense = df[df['Type'] == category]['Price'].mean()
         avg_expenses_per_category[category] = avg_expense
     return avg_expenses_per_category
-
-
+ 
+ 
 # Function to calculate total expenses for selected categories and number of days
+ 
 def calculate_total_expenses(selected_categories, num_days):
     total_expenses = {}
     for category in selected_categories:
@@ -99,13 +77,14 @@ def calculate_total_expenses(selected_categories, num_days):
             avg1 = df.loc[0, 'Price'].mean()
             avg2 = df.loc[1, 'Price'].mean() / 2
             avg3 = df.loc[2, 'Price'].mean()
-            avg_restaurant = (avg1 + avg3) / 2 + avg3
+            avg_restaurant = (avg1 + avg2) / 2 + avg3
             total_expenses[category] = avg_restaurant * num_days
         elif category == 'Transportation':
             avg_transportation = df[df['Type'] == 'Transportation']['Price'].mean()
             total_expenses[category] = avg_transportation * num_days
-        elif category == 'Rent Per Month':
+        elif category == 'Rent Per Day':
             avg_rent = df[df['Type'] == 'Rent Per Month']['Price'].mean()
+<<<<<<< Updated upstream
             avg_rent_per_day = avg_rent / 30
             # Add the average rent per day to the selected categories
             selected_categories.append(avg_rent_per_day)
@@ -115,28 +94,43 @@ def calculate_total_expenses(selected_categories, num_days):
             other_categories = ['Utilities (Monthly)', 'Sports And Leisure', 'Clothing And Shoes']
             avg_others = df[df['Type'].str.contains('|'.join(other_categories))]['Price'].mean()
             total_expenses[category] = avg_others * num_days
+=======
+            # Add the average rent per day to the selected categories                       
+            total_expenses[category] = (avg_rent / 30) * num_days
+        elif category == 'Others':
+            avg_utility=df[df['Type'] == 'Utilities (Monthly)']['Price'].mean()
+            avg_sports= df[df['Type'] == 'Sports And Leisure']['Price'].mean()
+            avg_clothing=df[df['Type'] == 'Clothing And Shoes']['Price'].mean()
+            avg_others = avg_utility + avg_sports + avg_clothing           
+            # Handle the 'Others' category here
+            # For example, calculate the mean of all categories not explicitly handled
+            #other_categories = ['Utilities (Monthly)', 'Sports And Leisure', 'Clothing And Shoes']
+            #avg_other = df[~df['Type'].isin(other_categories)]['Price'].mean()
+            total_expenses[category] = avg_others * num_days    
+>>>>>>> Stashed changes
     return total_expenses
-
+ 
+ 
 # Take user input for category selection
 selected_categories = select_categories(unique_types_list)
-
+ 
 # Take user input for number of days
 num_days = int(input("Enter the number of days you will stay: "))
-
+ 
 # Calculate average expenses per selected category
 avg_expenses_per_category = calculate_avg_expenses(selected_categories, df)
-
+ 
 # Calculate total expenses for selected categories and number of days
 total_expenses = calculate_total_expenses(avg_expenses_per_category, num_days)
-
+ 
 # Convert the dictionary to JSON
 results_json = json.dumps(total_expenses)
 # Convert the dictionary to JSON
 results_json = json.dumps(total_expenses)
-<
+ 
 # Remove the surrounding curly braces
 results_json = results_json[1:-1]
 results_json = results_json.replace('"', '')
 results_json = results_json.replace(',', '', 1)  # Remove the first comma
-
+ 
 print(results_json)
