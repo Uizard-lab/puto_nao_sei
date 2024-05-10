@@ -19,7 +19,9 @@ User.loaduserstatic()
 def get_users():
     email = request.args.get('email')
     user = User.get_user_by_email(email)
-    return jsonify(user.__dict__)
+    if user is None:
+        return jsonify({"error": "User not found"}), 404
+    return jsonify(user)
 
 @app.route('/city', methods=["GET"])
 def city_name():
