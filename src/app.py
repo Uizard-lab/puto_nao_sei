@@ -18,9 +18,12 @@ User.loaduserstatic()
 @app.route('/users', methods=["GET"])
 def get_users():
     email = request.args.get('email')
+    password = request.args.get('password')  
     user = User.get_user_by_email(email)
-    if user is None:
-        return jsonify({"error": "User not found"}), 404
+    if not email or not password:
+        return jsonify({"error": "Email and password are required"}), 400
+    if user.password != password:
+        return jsonify({"error": "Wrong password! Please try again"})
     return jsonify(user)
 
 @app.route('/city', methods=["GET"])
