@@ -1,1 +1,1 @@
-{"Currentuser": {"name": "Joao", "gender": "M", "age": 34, "email": "stuff@com", "password": "password", "address": "rua do bacalhau"}, "location": "Lisbos", "Totalprice": "2000", "startDate": "2024-05-09", "endDate": "2024-05-16", "category": ["Resturant", "Market", "Stuff"]}
+{"Currentuser": {"name": "Joao", "gender": "M", "age": 34, "email": "stuff@com", "password": "password", "address": "rua do bacalhau"}, "location": "Lisbon", "Totalprice": "10000", "startDate": "2024-05-09", "endDate": "2024-05-15", "category": ["Resturant", "Market", "Stuff"]}
