@@ -4,6 +4,7 @@ from Trips import Trips
 import json
 
 app = Flask(__name__)
+categorygeneral = {"Restaurants":28.275,"Transportation":10.52,"Habitation":84.82,"Opythers":158}
 
 @app.after_request
 def after_request(response):
@@ -18,7 +19,7 @@ User.loaduserstatic()
 @app.route('/users', methods=["GET"])
 def get_users():
     email = request.args.get('email')
-    password = request.args.get('password')  
+    password = request.args.get('password')
     user = User.get_user_by_email(email)
     if not email or not password:
         return jsonify({"error": "Email and password are required"}), 400
@@ -55,18 +56,49 @@ def simulate():
     days = request.args.get("days")
     trip = Trips.getTripbyEmail(email)
     totalprice = trip.Totalprice
-    category = {"Resturant":28.275,"Transportation":10.52,"Habition":84.82,"Outhers":158}
-    for cat in category:
-        percentage = category[cat] / sum(category.values())
-        print(percentage)
+    listofpercentage = []
+    for cat in categorygeneral:
+        percentage = categorygeneral[cat] / sum(categorygeneral.values())
+        print(percentage * 100)
+        listofpercentage.append(percentage * 100)
+
+    return listofpercentage
+
+@app.route('/pricepercategory', methods=["POST"])
+def pricepercategory():
+    category = {"Restaurants":28.275,"Transportation":10.52,"Habitation":84.82,"Others":158}
+    data = request.get_json()
+    print(category["Resturant"] * 1.5 )
+
+    if category["Restaurants"] * 1.5 < data["Restaurants"]:
+        message = f"Restaurants is over budget by 50% (Max is: {category['Restaurants'] * 1.5})"
+        messagejson = json.dumps({"msg": message})
+        return messagejson
+    elif category["Habitation"] * 1.5 < data["Habitation"]:
+        message = f"Habitation is over budget by 50% (Max is: {category['Habitation'] * 1.5})"
+        messagejson = json.dumps({"msg": message})
+        return messagejson
+    elif category["Transportation"] * 1.5 < data["Transportation"]:
+        message = f"Transportation is over budget by 50% (Max is: {category['Transportation'] * 1.5})"
+        messagejson = json.dumps({"msg": message})
+        return messagejson
+    elif category["Others"] * 1.5 < data["Others"]:
+        message = f"Others is over budget by 50% (Max is: {category['Others'] * 1.5})"
+        messagejson = json.dumps({"msg": message})
+        return messagejson
+    else:
+        category["Habitation"] = data["Habitation"]
+        category["Resturant"] = data["Resturant"]
+        category["Transportation"] = data["Transportation"]
+        category["Others"] = data["Others"]
+        categorygeneral["Habitation"] = data["Habitation"]
+        categorygeneral["Restaurants"] = data["Restaurants"]
+        categorygeneral["Transportation"] = data["Transportation"]
+        categorygeneral["Others"] = data["Others"]
+
+    return json.dumps(category)
 
 
-
-
-
-
-
-    return [1920,2000,3000,1]
 
 @app.route('/simulateDays', methods=["GET"])
 def simulateDays():
